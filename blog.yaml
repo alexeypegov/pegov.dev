@@ -1,0 +1,49 @@
+general:
+  notes-dir: posts/
+  page-template: index
+  sitemap-template: sitemap
+  singles-dir: pages/
+  single-template: page
+  output-dir: docs/
+  base-url: https://pegov.dev/
+  feeds:
+    - atom
+    - short-atom
+  copy:
+    - theme/styles/
+    - theme/js/
+    - theme/i/
+    - posts/images/
+    - static/robots.txt
+    - static/CNAME
+
+vars:
+  blog:
+    lang: en
+    locale: en_US
+    title: pegov on dev
+    url: https://pegov.dev
+    description: "Thoughts about software development, solo-enterpreneurship and everything else related."
+    keywords: 'alexey pegov, solo-enterpreneur, swift, ios, swiftui, software, indie'
+    cover: /images/avatar.jpg
+  feed:
+    url: https://pegov.dev/atom.xml
+    title: All Posts
+    author: Alexey Pegov
+    email: alexey@pegov.dev
+  links:
+    - url: about.html
+      title: About
+    - url: apps.html
+      title: Apps
+  icons:
+    - rel: apple-touch-icon
+      href: i/favicon-32.png
+    - rel: apple-touch-icon
+      sizes: 180x180
+      href: i/favicon-180.png
+    - rel: apple-touch-icon
+      sizes: 196x196
+      href: i/favicon-196.png
+    - rel: shortcut icon
+      href: i/favicon.png
