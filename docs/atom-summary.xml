@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="https://pegov.dev/">
+  <title>Pegov.Dev</title>
+  <link href="https://pegov.dev/atom-summary.xml" rel="self" />
+  <link href="https://pegov.dev" />
+  <id>https://pegov.dev/</id>
+  <updated>2024-04-11T00:00:00+00:00</updated>
+    <entry>
+      <title><![CDATA[On Failure]]></title>
+      <link href="https://pegov.dev/2024-04-11-on-failure.html" />
+      <id>urn:uuid:c355b699-60a1-3e90-8d51-002b2de9b5cd</id>
+      <updated>2024-04-11T00:00:00+00:00</updated>
+      <content type="html">
+	<![CDATA[
+        On failure of a developer being a solo-enterpreneur
+	]]>
+      </content>
+      <author>
+        <name>Alexey Pegov</name>
+        <email>alexey@pegov.dev</email>
+      </author>
+    </entry>
+</feed>
