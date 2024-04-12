@@ -8,7 +8,8 @@ general:
   base-url: https://pegov.dev/
   feeds:
     - atom
-    - short-atom
+    - atom-link
+    - atom-summary
   copy:
     - theme/styles/
     - theme/js/
@@ -21,21 +22,26 @@ vars:
   blog:
     lang: en
     locale: en_US
-    title: pegov on dev
+    title: Pegov.Dev
     url: https://pegov.dev
-    description: "Thoughts about software development, solo-enterpreneurship and everything else related."
+    description: "Notes on software development, solo-enterpreneurship and everything else related."
     keywords: 'alexey pegov, solo-enterpreneur, swift, ios, swiftui, software, indie'
     cover: /images/avatar.jpg
   feed:
-    url: https://pegov.dev/atom.xml
-    title: All Posts
     author: Alexey Pegov
     email: alexey@pegov.dev
+  feeds:
+    - title: Full Entries
+      url: https://pegov.dev/atom.xml
+    - title: Short Summaries
+      url: https://pegov.dev/atom-summary.xml
+    - title: Links Only
+      url: https://pegov.dev/atom-link.xml
   links:
+    - url: products.html
+      title: products
     - url: about.html
-      title: About
-    - url: apps.html
-      title: Apps
+      title: about
   icons:
     - rel: apple-touch-icon
       href: i/favicon-32.png

@@ -44,11 +44,9 @@
       <#assign url = vars.blog.url>
     </#if>
     <meta property="og:url" content="${url}">
-    <#if tags??>
-      <#list tags as tag>
+    <#list tags![] as tag>
     <meta property="og:tag" content="${tag}">
-      </#list>
-    </#if>
+    </#list>
     <#assign cover=cover!vars.blog.cover>
     <meta property="og:image" content="${vars.blog.url + cover}">
 
@@ -61,22 +59,34 @@
     <link rel="${icon.rel}" type="${type}" href="${icon.href}"/>
     </#if>
     </#list>
-    <link rel="alternate" type="application/atom+xml" title="${vars.feed.title}" href="${vars.feed.url}">
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <#list vars.feeds as feed>
+    <link rel="alternate" type="application/atom+xml" title="${feed.title}" href="${feed.url}">
+    </#list>
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-light.min.css" media="screen and (prefers-color-scheme: light)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" media="screen and (prefers-color-scheme: dark)">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/swift.min.js"></script>
+    <script>hljs.highlightAll();</script>
   </head>
 <body>
 <header itemscope itemtype="https://schema.org/WPHeader">
   <div id="logo">
-    <img src="images/userpic2019.jpg" width="100"/>
+    <img src="images/avatar.jpg" width="144" height="144"/>
     <div id="title">
       <h1><a href="/">${vars.blog.title}</a></h1>
       <span>${vars.blog.description}</span>
+      <#list vars.links>
+        <nav itemscope itemtype="https://schema.org/SiteNavigationElement">
+        <#items as link>
+          <a href="${link.url}">${link.title}</a>
+          <#sep> · </#sep>
+        </#items>
+        </nav>
+      </#list>
     </div>
   </div>
-  <nav itemscope itemtype="https://schema.org/SiteNavigationElement">
-    <#list vars.links as link>
-    <a href="${link.url}">${link.title}</a>
-    </#list>
-  </nav>
 </header>
 <main itemscope itemtype="https://schema.org/Blog">

@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Literata:wght@400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Major+Mono+Display&display=swap');
 
 :root {
   /* size factor: 1.250 */
@@ -12,8 +11,9 @@
   --h5-size: 1.25rem;
   --h6-size: 1rem;
   --small-size: .8rem;
-  --font-family: "Literata", fallback, serif;
-  --title-font-family: 'Mulish', fallback, sans-serif;
+  --font-family: "Bitter", fallback, sans-serif;
+  --title-font-family: "Major Mono Display", fallback, sans-serif;
+  --title-font-weight: 400;
   --text-color: #444;
   --title-color: #444;
   --title-decoration-color: #ddd;
@@ -27,12 +27,11 @@
   --blockquote-border-color: #1E90FF;
   --blockquote-text-color: #333;
   --blockquote-background-color: #eee;
-  --pre-background-color: #eee;
   --note-width: 90%;
   --paging-text-color: #777;
 }
 
-@media (width <=599px) {
+@media (width <=799px) {
   :root {
     /* size factor: 1.067 */
 
@@ -64,7 +63,7 @@
   }
 }
 
-@media (width <=599px) {
+@media (width <=799px) {
   :root {
     --link-decoration-color: #33c;
     --note-title-decoration-color: #444;
@@ -158,28 +157,54 @@ header {
   text-align: center;
 }
 
-header>#logo {
+header {
   display: flex;
+  flex-flow: column;
+  align-items: center;
 }
 
-header>h1 {
-  white-space: nowrap;
+#logo {
+  display: flex;
+  column-gap: 2rem;
+  width: var(--note-width);
+  max-width: 800px;
+  align-items: center;
   font-family: var(--title-font-family);
+  font-weight: var(--title-font-weight);
 }
 
-header>h1>a[href] {
+#logo img {
+  border-radius: 50%;
+}
+
+#title h1 {
+  white-space: nowrap;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+#title span {
+  text-transform: lowercase;
+}
+
+#logo>#title {
+  text-align: start;
+}
+
+#logo h1>a[href] {
   color: var(--title-color);
-  text-decoration-color: var(--title-decoration-color);
+  text-decoration: none;
 }
 
 header nav {
   font-family: var(--title-font-family);
-  font-size: var(--h5-size);
+  font-weight: var(--title-font-weight);
+  text-align: start;
   padding-top: .5rem;
 }
 
-header nav a~a {
-  margin-left: 1rem;
+header nav a {
+  text-decoration: none;
 }
 
 main {
@@ -201,6 +226,7 @@ article>h2 {
   color: var(--title-color);
   font-size: var(--h4-size);
   font-family: var(--title-font-family);
+  font-weight: var(--title-font-weight);
 }
 
 article>h3 {
@@ -210,16 +236,18 @@ article>h3 {
 
 article>h2>a[href] {
   color: var(--title-color);
-  text-decoration-color: var(--note-title-decoration-color);
+  text-decoration: none;
 }
 
 article>h2>a:hover {
-  text-decoration-color: var(--title-color);
+  /* fix me */
+  color: var(--title-color);
 }
 
 article>.sub {
   font-size: var(--h6-size);
   font-family: var(--title-font-family);
+  font-weight: var(--title-font-weight);
 }
 
 article>.sub>div {
@@ -232,7 +260,7 @@ article .tags {
 }
 
 article .tags::before {
-  content: "•";
+  content: "·";
 }
 
 article .tag:not(:first-child) {
@@ -290,10 +318,11 @@ blockquote>p {
 }
 
 pre {
-  background-color: var(--pre-background-color);
-  padding: 1rem;
-  border-radius: 5px;
   white-space: pre-wrap;
+}
+
+pre code {
+  font-size: var(--small-size);
 }
 
 .media iframe {
@@ -341,18 +370,21 @@ nav.paging {
 
 footer {
   text-align: center;
-  padding: 1rem 0;
-  opacity: .3;
+  padding: 3rem 0 1rem;
+  opacity: .7;
+  font-family: var(--title-font-family);
+  font-weight: var(--title-font-weight);
   font-size: var(--small-size);
+  text-transform: lowercase;
 }
 
-@media all and (width <=599px) {
+@media all and (width <=799px) {
   header {
-    margin: 2rem 0;
+    margin: 2rem 1rem;
   }
 
-  header nav a~a {
-    margin-left: .5rem;
+  #logo {
+    column-gap: 1rem;
   }
 
   main,
@@ -390,5 +422,11 @@ footer {
     height: auto;
     margin-left: -1rem;
     object-fit: contain;
+  }
+}
+
+@media all and (width <=599px) {
+  header img {
+    display: none;
   }
 }
