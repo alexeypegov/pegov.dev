@@ -22,7 +22,7 @@ vars:
   blog:
     lang: en
     locale: en_US
-    title: Pegov.Dev
+    title: Pegov & Dev
     url: https://pegov.dev
     description: "Notes on software development, solo-enterpreneurship and everything else related."
     keywords: 'alexey pegov, solo-enterpreneur, swift, ios, swiftui, software, indie'
@@ -39,9 +39,9 @@ vars:
       url: https://pegov.dev/atom-link.xml
   links:
     - url: products.html
-      title: products
+      title: Products
     - url: about.html
-      title: about
+      title: About
   icons:
     - rel: apple-touch-icon
       href: i/favicon-32.png

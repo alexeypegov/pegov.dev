@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Major+Mono+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lustria&family=PT+Sans+Caption:wght@400;700&display=swap');
 
 :root {
   /* size factor: 1.250 */
@@ -11,13 +11,15 @@
   --h5-size: 1.25rem;
   --h6-size: 1rem;
   --small-size: .8rem;
-  --font-family: "Bitter", fallback, sans-serif;
-  --title-font-family: "Major Mono Display", fallback, sans-serif;
-  --title-font-weight: 400;
+  --line-height: 1.47;
+  --font-family: "Lustria", fallback, serif;
+  --title-font-family: "PT Sans Caption", fallback, sans-serif;
+  --title-font-weight: 700;
   --text-color: #444;
   --title-color: #444;
   --title-decoration-color: #ddd;
   --subtitle-color: #444;
+  --subtitle-font-weight: 400;
   --background-color: #fff;
   --link-color: #33c;
   --link-decoration-color: #bbf;
@@ -90,7 +92,7 @@ html {
 
 body {
   font-family: var(--font-family);
-  line-height: 1.43;
+  line-height: var(--line-height);
   background-color: var(--background-color);
   color: var(--text-color);
 }
@@ -153,14 +155,13 @@ hr {
 }
 
 header {
-  margin: 4rem 0;
-  text-align: center;
-}
-
-header {
   display: flex;
   flex-flow: column;
   align-items: center;
+  margin: 4rem 0;
+  text-align: center;
+  font-family: var(--title-font-family);
+  font-size: var(--h6-size);
 }
 
 #logo {
@@ -169,8 +170,6 @@ header {
   width: var(--note-width);
   max-width: 800px;
   align-items: center;
-  font-family: var(--title-font-family);
-  font-weight: var(--title-font-weight);
 }
 
 #logo img {
@@ -180,11 +179,7 @@ header {
 #title h1 {
   white-space: nowrap;
   margin: 0;
-  text-transform: uppercase;
-}
-
-#title span {
-  text-transform: lowercase;
+  font-weight: var(--title-font-weight);
 }
 
 #logo>#title {
@@ -197,8 +192,6 @@ header {
 }
 
 header nav {
-  font-family: var(--title-font-family);
-  font-weight: var(--title-font-weight);
   text-align: start;
   padding-top: .5rem;
 }
@@ -226,7 +219,7 @@ article>h2 {
   color: var(--title-color);
   font-size: var(--h4-size);
   font-family: var(--title-font-family);
-  font-weight: var(--title-font-weight);
+  font-weight: var(--subtitle-font-weight);
 }
 
 article>h3 {
@@ -247,7 +240,6 @@ article>h2>a:hover {
 article>.sub {
   font-size: var(--h6-size);
   font-family: var(--title-font-family);
-  font-weight: var(--title-font-weight);
 }
 
 article>.sub>div {
@@ -371,9 +363,8 @@ nav.paging {
 footer {
   text-align: center;
   padding: 3rem 0 1rem;
-  opacity: .7;
+  opacity: .4;
   font-family: var(--title-font-family);
-  font-weight: var(--title-font-weight);
   font-size: var(--small-size);
   text-transform: lowercase;
 }
@@ -422,11 +413,5 @@ footer {
     height: auto;
     margin-left: -1rem;
     object-fit: contain;
-  }
-}
-
-@media all and (width <=599px) {
-  header img {
-    display: none;
   }
 }
